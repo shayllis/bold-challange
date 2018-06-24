@@ -5,7 +5,7 @@ Go to /config/app.php and set database settings in Datasources settings
 
 2. Installing dependences
 ```bash
-$ bin/cake migrations
+$ composer install
 ```
 ## Not done yet
 1. You  need to import the database
