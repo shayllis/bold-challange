@@ -1,0 +1,75 @@
+2018-06-24 13:19:41 Error: [InvalidArgumentException] There was a problem connecting to the database: SQLSTATE[HY000] [1045] Access denied for user 'my_app'@'localhost' (using password: YES) in /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/robmorgan/phinx/src/Phinx/Db/Adapter/MysqlAdapter.php on line 115
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/robmorgan/phinx/src/Phinx/Db/Adapter/PdoAdapter.php(238): Phinx\Db\Adapter\MysqlAdapter->connect()
+#1 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/cakephp/migrations/src/CakeAdapter.php(57): Phinx\Db\Adapter\PdoAdapter->getConnection()
+#2 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/cakephp/migrations/src/Command/CommandTrait.php(78): Migrations\CakeAdapter->__construct(Object(Phinx\Db\Adapter\MysqlAdapter), Object(Cake\Database\Connection))
+#3 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/robmorgan/phinx/src/Phinx/Console/Command/Create.php(153): Migrations\Command\Create->bootstrap(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/cakephp/migrations/src/Command/CommandTrait.php(35): Phinx\Console\Command\Create->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/cakephp/migrations/src/Command/Create.php(72): Migrations\Command\Create->parentExecute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/symfony/console/Command/Command.php(251): Migrations\Command\Create->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/symfony/console/Application.php(946): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#8 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/symfony/console/Application.php(248): Symfony\Component\Console\Application->doRunCommand(Object(Migrations\Command\Create), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/symfony/console/Application.php(148): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#10 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(108): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#11 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/cakephp/cakephp/src/Console/Shell.php(532): Migrations\Shell\MigrationsShell->main('migrations', 'create', 'TesteDatabase')
+#12 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(164): Cake\Console\Shell->runCommand(Array, true, Array)
+#13 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/cakephp/cakephp/src/Console/CommandRunner.php(342): Migrations\Shell\MigrationsShell->runCommand(Array, true)
+#14 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/cakephp/cakephp/src/Console/CommandRunner.php(164): Cake\Console\CommandRunner->runShell(Object(Migrations\Shell\MigrationsShell), Array)
+#15 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/bin/cake.php(12): Cake\Console\CommandRunner->run(Array)
+#16 {main}
+
+
+2018-06-24 14:53:03 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'product-upsell' for key 'shopify_domain' in /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/robmorgan/phinx/src/Phinx/Db/Adapter/PdoAdapter.php on line 392
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/robmorgan/phinx/src/Phinx/Db/Adapter/PdoAdapter.php(392): PDOStatement->execute(Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/cakephp/migrations/src/CakeAdapter.php(400): Phinx\Db\Adapter\PdoAdapter->insert(Object(Migrations\Table), Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/robmorgan/phinx/src/Phinx/Db/Adapter/AdapterWrapper.php(183): Migrations\CakeAdapter->insert(Object(Migrations\Table), Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/robmorgan/phinx/src/Phinx/Db/Table.php(651): Phinx\Db\Adapter\AdapterWrapper->insert(Object(Migrations\Table), Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/config/Migrations/20180624133450_TesteDatabase.php(58): Phinx\Db\Table->saveData()
+#5 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/robmorgan/phinx/src/Phinx/Migration/Manager/Environment.php(117): TesteDatabase->change()
+#6 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/robmorgan/phinx/src/Phinx/Migration/Manager.php(366): Phinx\Migration\Manager\Environment->executeMigration(Object(TesteDatabase), 'down')
+#7 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/robmorgan/phinx/src/Phinx/Migration/Manager.php(489): Phinx\Migration\Manager->executeMigration('default', Object(TesteDatabase), 'down')
+#8 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/robmorgan/phinx/src/Phinx/Console/Command/Rollback.php(124): Phinx\Migration\Manager->rollback('default', 0, false, true)
+#9 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/cakephp/migrations/src/Command/CommandTrait.php(35): Phinx\Console\Command\Rollback->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#10 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/cakephp/migrations/src/Command/Rollback.php(66): Migrations\Command\Rollback->parentExecute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#11 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/symfony/console/Command/Command.php(251): Migrations\Command\Rollback->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#12 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/symfony/console/Application.php(946): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#13 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/symfony/console/Application.php(248): Symfony\Component\Console\Application->doRunCommand(Object(Migrations\Command\Rollback), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/symfony/console/Application.php(148): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(108): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/cakephp/cakephp/src/Console/Shell.php(532): Migrations\Shell\MigrationsShell->main('migrations', 'rollback')
+#17 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(164): Cake\Console\Shell->runCommand(Array, true, Array)
+#18 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/cakephp/cakephp/src/Console/CommandRunner.php(342): Migrations\Shell\MigrationsShell->runCommand(Array, true)
+#19 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/cakephp/cakephp/src/Console/CommandRunner.php(164): Cake\Console\CommandRunner->runShell(Object(Migrations\Shell\MigrationsShell), Array)
+#20 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/bin/cake.php(12): Cake\Console\CommandRunner->run(Array)
+#21 {main}
+
+
+2018-06-24 14:53:03 Warning: The connection is going to be closed but there is an active transaction.
+2018-06-24 14:53:03 Warning: Warning (2): fwrite(): supplied resource is not a valid stream resource in [/Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/cakephp/cakephp/src/Console/ConsoleOutput.php, line 253]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 159
+fwrite - [internal], line ??
+Cake\Console\ConsoleOutput::_write() - CORE/src/Console/ConsoleOutput.php, line 253
+Cake\Console\ConsoleOutput::write() - CORE/src/Console/ConsoleOutput.php, line 188
+Cake\Log\Engine\ConsoleLog::log() - CORE/src/Log/Engine/ConsoleLog.php, line 94
+Cake\Log\Log::write() - CORE/src/Log/Log.php, line 384
+Cake\Log\Log::warning() - CORE/src/Log/Log.php, line 469
+Cake\Database\Connection::__destruct() - CORE/src/Database/Connection.php, line 135
+[main] - [internal], line ??
+
+
+
+2018-06-24 14:55:53 Error: [Symfony\Component\Console\Exception\CommandNotFoundException] Command "migrations" is not defined. in /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/symfony/console/Application.php on line 618
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/symfony/console/Application.php(229): Symfony\Component\Console\Application->find('migrations')
+#1 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/symfony/console/Application.php(148): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(108): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/cakephp/cakephp/src/Console/Shell.php(532): Migrations\Shell\MigrationsShell->main('migrations', 'migrations', 'seed')
+#4 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(164): Cake\Console\Shell->runCommand(Array, true, Array)
+#5 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/cakephp/cakephp/src/Console/CommandRunner.php(342): Migrations\Shell\MigrationsShell->runCommand(Array, true)
+#6 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/vendor/cakephp/cakephp/src/Console/CommandRunner.php(164): Cake\Console\CommandRunner->runShell(Object(Migrations\Shell\MigrationsShell), Array)
+#7 /Applications/XAMPP/xamppfiles/htdocs/BoldChallange/bin/cake.php(12): Cake\Console\CommandRunner->run(Array)
+#8 {main}
+
+

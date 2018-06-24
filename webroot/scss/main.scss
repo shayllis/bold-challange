@@ -1,0 +1,16 @@
+@import "../plugins/bootstrap/assets/stylesheets/_bootstrap.scss";
+
+$fa-font-path: '/plugins/font-awesome/fonts';
+
+@import "../plugins/font-awesome/scss/font-awesome.scss";
+@import "../plugins/dataTable/css/dataTable.min.css";
+// Custom
+$text-yellow: #edca1e;
+
+.text-yellow {
+	color: $text-yellow;
+}
+
+body {
+	padding-top: 60px;
+}
